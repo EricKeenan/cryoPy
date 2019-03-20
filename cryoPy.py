@@ -20,6 +20,7 @@ class Geo:
 		tgt = osr.SpatialReference()
 		src.ImportFromEPSG(src_EPSG)
 		tgt.ImportFromEPSG(tgt_EPSG)
+		transform = osr.CoordinateTransformation(src, tgt)
 
 		# Initialize tgt_Lat and tgt_Lon numpy arrays
 		tgt_Lat = np.zeros(len(src_Lat))
@@ -27,7 +28,7 @@ class Geo:
 
 		# Perform coordinate transformation.
 		for j in range(0, len(src_Lat)):
-			tgt_coords = trasnform.TransformPoint(src_Lon[j], src_Lat[j])
+			tgt_coords = transform.TransformPoint(src_Lon[j], src_Lat[j])
 			tgt_Lon[j] = tgt_coords[0]
 			tgt_Lat[j] = tgt_coords[1]
 
