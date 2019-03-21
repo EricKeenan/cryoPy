@@ -6,7 +6,7 @@ import numpy as np
 # Class which contains geographic manipulation functions. 
 class Geo:
 
-	# Coordinate system transformation function.
+	# Coordinate system transformation function, using gdal. 
 	# src_EPSG: Source EPSG coordinate system (ex: MERRA-2 = 4326). 
 	# tgt_EPSG: Target EPSG coordinate system (ex: South polar stereo = 3031).
 	# src_Lat: Numpy 1-D vector array of latitude in src_EPSG to be converted to tgt_EPSG.
