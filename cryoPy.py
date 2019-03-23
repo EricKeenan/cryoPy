@@ -9,10 +9,10 @@ class Geo:
 	# Coordinate system transformation function, using gdal. 
 	# src_EPSG: Source EPSG coordinate system (ex: MERRA-2 = 4326). 
 	# tgt_EPSG: Target EPSG coordinate system (ex: South polar stereo = 3031).
-	# src_Lat: Numpy 1-D vector array of latitude in src_EPSG to be converted to tgt_EPSG.
-	# src_Lon: Numpy 1-D vector array of longitude in src_EPSG to be converted to tgt_EPSG.
-	# tgt_Lat: Numpy 1-D vector array of latitude in tgt_EPSG converted from src_EPSG.
-	# tgt_Lon: Numpy 1-D vector array of longitude in tgt_EPSG converted from src_EPSG.
+	# src_Lat: Latitude in src_EPSG to be converted to tgt_EPSG. Can be a list pair, vector, or numpy array. 
+	# src_Lon: Longitude in src_EPSG to be converted to tgt_EPSG. Can be a list pair, vector, or numpy array. 
+	# tgt_Lat: Latitude in tgt_EPSG converted from src_EPSG. Can be a list pair, vector, or numpy array. 
+	# tgt_Lon: Longitude in tgt_EPSG converted from src_EPSG. Can be a list pair, vector, or numpy array. 
 	def coords_trans(src_EPSG, tgt_EPSG, src_Lat, src_Lon):
 
 		# Define source (src) and target (tgt) coordinate systems. 
